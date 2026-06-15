@@ -11,10 +11,14 @@ test.describe('Network mock via page.route()', () => {
       });
     });
 
-    const response = await page.request.get('https://jsonplaceholder.typicode.com/posts/1');
-    const body = await response.json();
+    // Must use page.evaluate so the fetch goes through the browser network stack
+    // where page.route() can intercept it. page.request.get() bypasses routing.
+    await page.goto('about:blank');
+    const body = await page.evaluate(async () => {
+      const res = await fetch('https://jsonplaceholder.typicode.com/posts/1');
+      return res.json();
+    });
 
-    expect(response.status()).toBe(200);
     expect(body.title).toBe('stubbed post title from fixture');
     expect(body.userId).toBe(99);
   });
