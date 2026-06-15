@@ -1,0 +1,6 @@
+{
+  "userId": 99,
+  "id": 1,
+  "title": "stubbed post title from fixture",
+  "body": "This response was intercepted and replaced by page.route() in Playwright."
+}
