@@ -1,0 +1,19 @@
+{
+  "name": "e2e-test-automation-demo",
+  "version": "1.0.0",
+  "description": "End-to-end test automation demo: Playwright (TypeScript & Python) and Cypress",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "test:pw": "playwright test",
+    "test:pw:ui": "playwright test --ui",
+    "test:cy": "cypress run",
+    "test:cy:open": "cypress open"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.44.0",
+    "cypress": "^13.10.0",
+    "typescript": "^5.4.5"
+  }
+}
