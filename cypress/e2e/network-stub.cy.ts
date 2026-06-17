@@ -4,7 +4,13 @@ describe('Network stub via cy.intercept()', () => {
       fixture: 'posts.json',
     }).as('getPost');
 
-    cy.visit('https://jsonplaceholder.typicode.com/posts/1');
+    // Visit any page so cy.window() fetch goes through the browser network
+    // stack where cy.intercept() can intercept it. about:blank can't be used
+    // when baseUrl is set, so we use the app's login page.
+    cy.visit('/');
+    cy.window().then((win) => {
+      win.fetch('https://jsonplaceholder.typicode.com/posts/1');
+    });
 
     cy.wait('@getPost').its('response.body').should((body) => {
       const parsed = typeof body === 'string' ? JSON.parse(body) : body;
