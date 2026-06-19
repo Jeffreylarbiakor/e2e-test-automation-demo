@@ -94,8 +94,8 @@ npx cypress open
 
 | Spec | Scenario |
 |---|---|
-| `login.cy.ts` | Valid login · invalid login error |
-| `cart.cy.ts` | Add to cart → cart badge → proceed to checkout |
+| `login.cy.ts` | Wrong credentials → error message · valid credentials → inventory page (single visit) |
+| `cart.cy.ts` | Add to cart → cart badge · cart page shows item · checkout button visible |
 | `network-stub.cy.ts` | `cy.intercept()` stubs `GET /posts/1` with fixture JSON |
 
 **Fixtures & network stubbing:** The Playwright TS suite uses a custom `loggedInPage` fixture (`tests/fixtures/auth.fixture.ts`) to avoid repeating login steps across specs. Network mocking uses `page.route()` (Playwright) and `cy.intercept()` (Cypress) with the same stub payload at `tests/api-fixtures/posts.json` / `cypress/fixtures/posts.json`.
