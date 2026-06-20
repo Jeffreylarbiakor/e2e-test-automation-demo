@@ -141,8 +141,8 @@ e2e-test-automation-demo/
 │       └── ci.yml                # Playwright TS + Cypress on push/PR
 │
 └── docs/
-    ├── playwright-report.png     # screenshot placeholder — add after first run
-    └── cypress-run.png           # screenshot placeholder — add after first run
+    ├── playwright-report.png
+    └── cypress-run.png
 ```
 
 ---
@@ -154,8 +154,6 @@ GitHub Actions runs the Playwright TS and Cypress suites on every push and pull 
 ---
 
 ## Screenshots
-
-> Replace these placeholders with screenshots after your first local run.
 
 ### Playwright HTML report
 ![Playwright report](docs/playwright-report.png)
