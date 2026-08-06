@@ -153,7 +153,7 @@ GitHub Actions runs the Playwright TS and Cypress suites on every push and pull 
 
 ---
 
-## Screenshot
+## Screenshots
 
 ### Playwright HTML report
 ![Playwright report](docs/playwright-report.png)
