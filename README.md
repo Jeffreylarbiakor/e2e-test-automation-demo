@@ -4,7 +4,7 @@ A portfolio demo showing real, runnable end-to-end test automation across two fr
 
 ---
 
-## Target application
+## Target application & API
 
 | Target | URL | Why |
 |---|---|---|
